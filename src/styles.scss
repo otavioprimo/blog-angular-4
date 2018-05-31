@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$main-color: #41BBEA;
+
+body {
+    margin: 0;
+}
+
+//Spinner
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: $main-color;
+}
+
+//Cards dos cursos
+#div-cards {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 20px;
+
+    mat-grid-tile {
+        border-radius: 8px;
+    }
+}

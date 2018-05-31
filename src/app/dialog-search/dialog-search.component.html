@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>O que você procura?</h1>
+
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput type="text" autocomplete="on" name="pesqusiar" placeholder="Pesquisar.." [(ngModel)]="value" (keyup.enter)="confirmSelection()">
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">
+    Cancelar
+  </button>
+  <button mat-button (click)="confirmSelection()" color="primary">
+    Buscar
+  </button>
+</div>
