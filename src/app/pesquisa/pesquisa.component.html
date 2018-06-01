@@ -1,18 +1,5 @@
 <mat-spinner id="spinner" diameter="80" *ngIf="isLoading; else body"></mat-spinner>
 
 <ng-template #body>
-    <div id="div-cards">
-        <mat-grid-list cols="{{cols}}" rowHeight="160px" gutterSize="8px">
-            <mat-grid-tile *ngFor="let i of itens" [colspan]="i.cols" [rowspan]="1">
-                <!-- <img [src]="i.image" alt="{{i.title}}"> -->
-                <img [defaultImage]="defaultImage" [lazyLoad]="i.image" alt="{{i.title}}">
-                <div id="content">
-                    <p>{{i.content}}</p>
-                </div>
-                <mat-grid-tile-footer>
-                    {{i.title}}
-                </mat-grid-tile-footer>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </div>
+    <app-card-tutoriais [itens]="itens"></app-card-tutoriais>
 </ng-template>

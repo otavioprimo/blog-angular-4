@@ -1,33 +1,3 @@
-<mat-toolbar>
-    <img src="https://teamextension.pt/dist/img/skills/ionic_og.png" alt="Logo" id="logo" routerLink="/">
 
-    <!-- Search on large screens -->
-    <div class="form-search" id="search-lg">
-        <mat-form-field class="input-search">
-            <input matInput type="text" autocomplete="on" name="pesqusiar" placeholder="Pesquisar.." [(ngModel)]="value" (keyup.enter)="search()">
-            <button mat-button *ngIf="value" matSuffix mat-icon-button (click)="value=''" type="button">
-                <mat-icon>close</mat-icon>
-            </button>
-        </mat-form-field>
-    </div>
-    <!-- Search on large screens -->
-
-    <!-- Search on small screens -->
-    <button mat-icon-button class="btn" (click)="openSearchDialog()" id="search-sm">
-        <mat-icon>search</mat-icon>
-    </button>
-    <!-- Search on small screens -->
-
-    <!-- Buttons -->
-    <button mat-button class="btn" routerLink="/">Página Inicial</button>
-    <button mat-button class="btn" routerLink="/categorias">Categorias</button>
-    <button mat-icon-button class="btn" id="notification">
-        <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
-    </button>
-    <button mat-icon-button class="btn" id="more">
-        <mat-icon>more_horiz</mat-icon>
-    </button>
-    <!-- Buttons -->
-</mat-toolbar>
-
+<app-nav-header></app-nav-header>
 <router-outlet></router-outlet>

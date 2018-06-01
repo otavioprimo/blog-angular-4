@@ -27,6 +27,8 @@ import {
 } from '@angular/material';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { NavHeaderComponent } from './nav-header/nav-header.component';
+import { CardTutoriaisComponent } from './card-tutoriais/card-tutoriais.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { CategoriasComponent } from './categorias/categorias.component';
     HomeComponent,
     DialogSearchComponent,
     PesquisaComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    NavHeaderComponent,
+    CardTutoriaisComponent
   ],
   imports: [
     BrowserModule,

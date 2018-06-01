@@ -1,0 +1,21 @@
+<div id="div-cards" class="fade-in">
+    <mat-grid-list cols="{{cols}}" rowHeight="260px" gutterSize="8px">
+        <mat-grid-tile *ngFor="let i of itens" [colspan]="i.cols" [rowspan]="1">
+            <img [defaultImage]="defaultImage" [lazyLoad]="i.image" alt="{{i.title}}">
+            <div class="content">
+                <p>{{i.content}}</p>
+            </div>
+
+            <mat-grid-tile-footer id="footer-title">
+                {{i.title}}
+            </mat-grid-tile-footer>
+
+            <mat-grid-tile-footer id="footer-action">
+                {{i.title}}
+                <button mat-icon-button (click)="openPage(i.title)">
+                    <mat-icon>open_in_new</mat-icon>
+                </button>
+            </mat-grid-tile-footer>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

@@ -1,0 +1,123 @@
+$font: "Carter One", cursive;
+
+#div-cards {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 32px;
+
+    mat-grid-tile {
+        opacity: 1;
+        transition: visibility 0s 2s, opacity 1s linear;
+        border-radius: 8px;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: cover;
+
+        img {
+            position: absolute;
+            -webkit-filter: blur(0px) grayscale(50%);
+            -moz-filter: blur(0px) grayscale(50%);
+            -o-filter: blur(0px) grayscale(50%);
+            -ms-filter: blur(0px) grayscale(50%);
+            filter: blur(0px) grayscale(50%);
+        }
+
+        #title {
+            font-size: 20px;
+            color: #fff;
+            position: absolute;
+            bottom: 15px;
+            text-align: center;
+            font-family: $font;
+        }
+
+        .content {
+            display: none;
+            position: absolute;
+            font-family: $font;
+            font-size: 14px;
+            color: #fff;
+            width: 90%;
+            border-radius: 8px;
+            top: 5px;
+            margin-top: 2px;
+            background-color: #41BBEA;
+
+            h1 {
+                margin-bottom: 0px;
+            }
+
+            h1, p {
+                font-size: 12px;
+                text-align: center;
+            }
+        }
+
+        #footer-title {
+            font-family: $font;
+        }
+
+        #footer-action {
+            opacity: 0;
+            background-color: #41BBEA;
+            font-family: $font;
+            font-size: 14px;
+
+            button {
+                margin-left: auto;
+            }
+        }
+    }
+
+    mat-grid-tile:hover {
+        img {
+            -webkit-filter: blur(5px) grayscale(100%);
+            -moz-filter: blur(5px) grayscale(100%);
+            -o-filter: blur(5px) grayscale(100%);
+            -ms-filter: blur(5px) grayscale(100%);
+            filter: blur(5px) grayscale(100%);
+        }
+
+        .content {
+            opacity: 1;
+            animation-name: fadeInOpacity;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 0.5s;
+            display: block;
+        }
+
+        #footer-title {
+            opacity: 0;
+            transition: visibility 0s 0.5s, opacity 0.5s linear;
+        }
+
+        #footer-action {
+            opacity: 1;
+            transition: visibility 0s 1s, opacity 1s linear;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content {
+        h1, p {
+            font-size: 12px !important;
+        }
+    }
+
+    #footer-action {
+        font-size: 12px;
+    }
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
