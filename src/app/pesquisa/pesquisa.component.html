@@ -1,5 +1,11 @@
 <mat-spinner id="spinner" diameter="80" *ngIf="isLoading; else body"></mat-spinner>
 
 <ng-template #body>
+    <!-- <h3>Resultados para "{{search}}"</h3> -->
+    <div id="div-chips">
+        <mat-chip-list>
+            <mat-chip *ngFor="let chip of chips" [color]="primary">{{chip}}</mat-chip>
+        </mat-chip-list>
+    </div>
     <app-card-tutoriais [itens]="itens"></app-card-tutoriais>
 </ng-template>

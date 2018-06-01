@@ -10,6 +10,8 @@ export class PesquisaComponent implements OnInit {
 
   isLoading: boolean = true;
   search: string = '';
+  chips: string[];
+  chip_color:string = '#41BBEA';
 
   itens: any = [];
   loren = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis turpis mi. Vivamus maximus, arcu eget congue laoreet aa";
@@ -34,6 +36,7 @@ export class PesquisaComponent implements OnInit {
     this.route.queryParams.subscribe(element => {
       if (element.q) {
         this.search = element.q;
+        this.chips = this.splitString(element.q);
         this.pesquisar();
       }
     });
@@ -43,7 +46,12 @@ export class PesquisaComponent implements OnInit {
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;
-    }, 2000);
+    }, 500);
+  }
+
+  splitString(value: string): string[] {
+    let words = value.split(/(\s+)/).filter((element) => { return element.trim().length > 0; })
+    return words;
   }
 
 }

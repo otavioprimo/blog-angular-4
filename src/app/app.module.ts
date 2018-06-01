@@ -1,15 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormControl } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { DialogSearchComponent } from './dialog-search/dialog-search.component';
 
 import {
   MatButtonModule,
@@ -23,12 +18,21 @@ import {
   MAT_LABEL_GLOBAL_OPTIONS,
   MatBadgeModule,
   MatDialogModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatMenuModule,
+  MatChipsModule,
+  MatAutocompleteModule
 } from '@angular/material';
+
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { DialogSearchComponent } from './dialog-search/dialog-search.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { NavHeaderComponent } from './nav-header/nav-header.component';
 import { CardTutoriaisComponent } from './card-tutoriais/card-tutoriais.component';
+import { PlaylistsComponent } from './playlists/playlists.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +42,11 @@ import { CardTutoriaisComponent } from './card-tutoriais/card-tutoriais.componen
     PesquisaComponent,
     CategoriasComponent,
     NavHeaderComponent,
-    CardTutoriaisComponent
+    CardTutoriaisComponent,
+    PlaylistsComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -56,6 +62,9 @@ import { CardTutoriaisComponent } from './card-tutoriais/card-tutoriais.componen
     MatBadgeModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+    MatMenuModule,
+    MatChipsModule,
+    MatAutocompleteModule,
     NgbModule.forRoot(),
     LazyLoadImageModule
   ],

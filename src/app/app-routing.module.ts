@@ -1,3 +1,4 @@
+import { PlaylistsComponent } from './playlists/playlists.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,10 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'categorias', component: CategoriasComponent },
-  { path: 'pesquisa', component: PesquisaComponent }
+  { path: 'pesquisa', component: PesquisaComponent },
+  { path: 'playlists', component: PlaylistsComponent },
+  { path: '**', redirectTo: '/' }
+
 ]
 
 @NgModule({

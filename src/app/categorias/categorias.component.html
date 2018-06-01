@@ -1,3 +1,14 @@
-<p>
-  categorias works!
-</p>
+<div id="div-cards" class="fade-in">
+  <mat-grid-list cols="{{cols}}" rowHeight="{{height}}" gutterSize="16px">
+    <mat-grid-tile *ngFor="let i of itens" [colspan]="1" [rowspan]="1">
+
+      <mat-card id="card">
+        <img [src]="i.image" id="logo">
+        <mat-card-content>
+          <p  matBadge="{{i.total}}" matBadgePosition="below after" matBadgeOverlap="true">{{i.description}}</p>
+        </mat-card-content>
+      </mat-card>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
