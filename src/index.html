@@ -18,16 +18,15 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
-  
-  <!-- Hightlight.js -->
-  <link rel="stylesheet" href="assets/plugins/highlight/styles/mono-blue.css">
-  <script src="assets/plugins/highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  
   <script>
+    // hljs.initHighlightingOnLoad();
     var OneSignal = window.OneSignal || [];
     OneSignal.push(function () {
       OneSignal.init({
@@ -35,6 +34,7 @@
       });
     });
   </script>
+
 </head>
 
 <body>

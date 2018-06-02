@@ -33,7 +33,7 @@ export class TutorialComponent implements OnInit {
       <img src="../../assets/icons/ionic-large-720.png" id="logo">
       <div id="row">
         <h1>${this.titleClear}</h1>
-        <a href="https://twitter.com/otavioprimo?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false" id="btn-twitter">Follow @otavioprimo</a>
+        <!--<a href="https://twitter.com/otavioprimo?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false" id="btn-twitter">Follow @otavioprimo</a> -->
       </div>
     </header>
 
@@ -47,8 +47,7 @@ export class TutorialComponent implements OnInit {
       malesuada luctus velit sit amet porta.</p>
 
 
-    <pre class="code">
-      <code class="html">
+      <pre class="prettyprint">
 &lt;div id="div-cards" class="fade-in"&gt;
     &lt;mat-grid-list cols="{{cols}}" rowHeight="260px" gutterSize="8px"&gt;
         &lt;mat-grid-tile *ngFor="let i of itens" [colspan]="i.cols" [rowspan]="1"&gt;
@@ -70,7 +69,6 @@ export class TutorialComponent implements OnInit {
         &lt;/mat-grid-tile&gt;
     &lt;/mat-grid-list&gt;
 &lt;/div&gt;
-      </code>
     </pre>
 
 
@@ -99,8 +97,7 @@ export class TutorialComponent implements OnInit {
       <li>Item 3</li>
     </ul>
 
-    <pre class="code">
-      <code class="html">
+    <pre class="prettyprint">
 &lt;mat-card id="card"&gt;
     &lt;img [src]="i.image" id="logo"&gt;
     &lt;div id="div-separator"&gt;
@@ -117,14 +114,12 @@ export class TutorialComponent implements OnInit {
         &lt;/p&gt;
     &lt;/div&gt;
 &lt;/mat-card&gt;
-      </code>
     </pre>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus luctus ligula eget blandit. Suspendisse sit
       amet dignissim nisi.</p>
 
-    <pre class="code">
-      <code class="typescript">
+      <pre class="prettyprint">
 import { Playlist } from './../models/Playlist';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
@@ -181,7 +176,10 @@ export class PlaylistsComponent implements OnInit {
         }
     }
 }
-      </code>
+    </pre>
+
+    <pre class="prettyprint">
+        <p>{{user}}</p>
     </pre>
 
   </div>`;

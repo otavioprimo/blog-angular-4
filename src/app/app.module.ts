@@ -6,6 +6,7 @@ import { FormsModule, FormControl } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { HighlightJsModule } from 'ngx-highlight-js';
 
 import {
   MatButtonModule,
@@ -72,7 +73,8 @@ import { SafeHtmlPipe } from './safe-html.pipe';
     MatChipsModule,
     MatAutocompleteModule,
     NgbModule.forRoot(),
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    HighlightJsModule
   ],
   providers: [
     { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'never' } },
