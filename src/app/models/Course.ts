@@ -5,4 +5,5 @@ export class Course {
     content: string;
     image: string;
     cols: string;
+    sm_cols?:string;
 }

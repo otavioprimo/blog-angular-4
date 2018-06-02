@@ -30,10 +30,10 @@ export class CategoriasComponent implements OnInit {
   setGridSize(size: number) {
     if (size <= 767) {
       this.cols = 2;
-      this.height = '190px';
+      this.height = '140px';
     } else {
       this.cols = 4;
-      this.height = '260px';
+      this.height = '200px';
     }
   }
 

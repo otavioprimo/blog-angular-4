@@ -12,7 +12,7 @@ export class CardTutoriaisComponent implements OnInit {
   cols: number = 0;
 
   defaultImage = '../assets/background-placeholder.jpg';
-  loren = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis turpis mi. Vivamus maximus, arcu eget congue laoreet aa";
+
   constructor() {
     this.setGridSize(window.innerWidth);
   }

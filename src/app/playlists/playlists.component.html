@@ -11,13 +11,37 @@
           <p id="title">{{i.title}}</p>
         </div>
 
-        <div id="div-hover">
+        <div id="div-hover" (click)="openCourses(i)">
           <mat-icon>play_arrow</mat-icon>
           <p>
             VER PLAYLIST
           </p>
         </div>
       </mat-card>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div id="div-playlists" class="fade-in">
+  <mat-grid-list cols="{{cols}}" rowHeight="{{height2}}" gutterSize="8px">
+    <mat-grid-tile *ngFor="let c of selected_courses" [colspan]="windowWidth <= 768 ? 2 : c.cols" [rowspan]="1">
+
+      <img [defaultImage]="defaultImage" [lazyLoad]="c.image" alt="{{c.title}}">
+      <div class="description" class="content">
+        <p>{{c.description}}</p>
+      </div>
+
+      <mat-grid-tile-footer id="footer-title">
+        {{c.title}}
+      </mat-grid-tile-footer>
+
+      <mat-grid-tile-footer id="footer-action">
+        {{c.title}}
+        <button mat-icon-button (click)="openPage(c.title)">
+          <mat-icon>open_in_new</mat-icon>
+        </button>
+      </mat-grid-tile-footer>
 
     </mat-grid-tile>
   </mat-grid-list>
