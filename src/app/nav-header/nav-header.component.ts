@@ -32,6 +32,8 @@ export class NavHeaderComponent implements OnInit {
           this.page = NavPages.PLAYLISTS;
         } if (_path.substr(0, 9) === '/pesquisa') {
           this.page = NavPages.PESQUISA;
+        } if (_path.substr(0, 9) === '/tutorial') {
+          this.page = NavPages.TUTORIAL;
         }
       } else {
         this.page = NavPages.PRINCIPAL;
@@ -61,4 +63,5 @@ class NavPages {
   public static readonly CATEGORIAS: string = 'categorias';
   public static readonly PLAYLISTS: string = 'playlists';
   public static readonly PESQUISA: string = 'pesquisa';
+  public static readonly TUTORIAL: string = 'tutorial';
 }
