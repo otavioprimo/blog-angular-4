@@ -1,3 +1,4 @@
+import { CoursesService } from './services/courses.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -69,7 +70,8 @@ import { PlaylistsComponent } from './playlists/playlists.component';
     LazyLoadImageModule
   ],
   providers: [
-    { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'never' } }
+    { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'never' } },
+    CoursesService
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogSearchComponent]

@@ -1,4 +1,6 @@
+import { Categorie } from './../models/Categorie';
 import { Component, OnInit, HostListener } from '@angular/core';
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'app-categorias',
@@ -10,7 +12,8 @@ export class CategoriasComponent implements OnInit {
   itens: any[] = [];
   cols = 5;
   height = '260px';
-  constructor() { 
+
+  constructor(private coursesService: CoursesService) {
     this.setGridSize(window.innerWidth);
   }
 
@@ -20,13 +23,8 @@ export class CategoriasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.itens = [
-      { description: 'Ionic 3', image: '../../assets/icons/ionic.jpg',total:6 },
-      { description: 'NodeJs', image: '../../assets/icons/nodejs.png',total:1 },
-      { description: 'MongoDB', image: '../../assets/icons/mongodb.png',total:2 },
-      { description: 'MySql', image: '../../assets/icons/mysql.png',total:4 },
-      { description: 'Android', image: '../../assets/icons/android.png',total:2 },
-    ]
+    this.coursesService.getCategories()
+      .then((data: Categorie[]) => { this.itens = data; })
   }
 
   setGridSize(size: number) {

@@ -1,3 +1,24 @@
-<p>
-  playlists works!
-</p>
+<div id="div-cards" class="fade-in scroll-vertical">
+  <mat-grid-list cols="1" rowHeight="{{height}}" gutterSize="16px">
+    <mat-grid-tile *ngFor="let i of itens" [colspan]="1" [rowspan]="1">
+
+      <mat-card id="card">
+        <img [src]="i.image" id="logo">
+        <div id="div-separator">
+          <p id="total">{{i.total_courses}}
+            <mat-icon>playlist_play</mat-icon>
+          </p>
+          <p id="title">{{i.title}}</p>
+        </div>
+
+        <div id="div-hover">
+          <mat-icon>play_arrow</mat-icon>
+          <p>
+            VER PLAYLIST
+          </p>
+        </div>
+      </mat-card>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

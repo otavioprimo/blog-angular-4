@@ -1,3 +1,5 @@
+import { Course } from './../models/Course';
+import { CoursesService } from './../services/courses.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,28 +13,15 @@ export class PesquisaComponent implements OnInit {
   isLoading: boolean = true;
   search: string = '';
   chips: string[];
-  chip_color:string = '#41BBEA';
+  chip_color: string = '#41BBEA';
 
-  itens: any = [];
+  itens: Course[] = [];
   loren = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis turpis mi. Vivamus maximus, arcu eget congue laoreet aa";
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private courseService: CoursesService) { }
 
 
   ngOnInit() {
-    this.itens = [
-      { title: 'Ionic 3 - Para Iniciantes', content: this.loren, cols: "2", color: 'lightblue', image: 'https://picsum.photos/720/260/?random' + new Date().getTime() + 1 },
-      { title: 'NodeJS + Ionic 3', content: this.loren, cols: "1", color: 'lightblue', image: 'https://picsum.photos/400/260/?random' + new Date().getTime() + 2 },
-      { title: 'Google Maps + Ionic 3', content: this.loren, cols: "1", color: 'lightblue', image: 'https://picsum.photos/400/260/?random' + new Date().getTime() + 3 },
-      { title: 'Ionic 3 com Onesignal', content: this.loren, cols: "1", color: 'lightblue', image: 'https://picsum.photos/400/260/?random' + new Date().getTime() + 4 },
-      { title: 'Item 5', content: this.loren, cols: "1", color: 'lightblue', image: 'https://picsum.photos/400/260/?random' + new Date().getTime() + 5 },
-      { title: 'Item 6', content: this.loren, cols: "2", color: 'lightblue', image: 'https://picsum.photos/720/260/?random' + new Date().getTime() + 6 },
-      { title: 'Item 7', content: this.loren, cols: "1", color: 'lightblue', image: 'https://picsum.photos/400/260/?random' + new Date().getTime() + 7 },
-      { title: 'Item 8', content: this.loren, cols: "1", color: 'lightblue', image: 'https://picsum.photos/400/260/?random' + new Date().getTime() + 8 },
-      { title: 'Item 9', content: this.loren, cols: "1", color: 'lightblue', image: 'https://picsum.photos/720/260/?random' + new Date().getTime() + 9 },
-      { title: 'Item 10', content: this.loren, cols: "1", color: 'lightblue', image: 'https://picsum.photos/720/260/?random' + new Date().getTime() + 10 }
-    ]
-
     this.route.queryParams.subscribe(element => {
       if (element.q) {
         this.search = element.q;
@@ -44,7 +33,21 @@ export class PesquisaComponent implements OnInit {
 
   pesquisar() {
     this.isLoading = true;
+
     setTimeout(() => {
+      this.courseService.getCourses()
+        .then((courses: Course[]) => {
+
+          this.chips.forEach(chip => {
+            let regex = new RegExp(chip.toLowerCase());
+
+            this.itens = courses.filter(element => {
+              return element.title.toLowerCase().match(regex);
+            });
+          });
+
+        });
+
       this.isLoading = false;
     }, 500);
   }

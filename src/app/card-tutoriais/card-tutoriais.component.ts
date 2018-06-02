@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
+import { Course } from '../models/Course';
 
 @Component({
   selector: 'app-card-tutoriais',
@@ -7,7 +8,7 @@ import { Component, OnInit, HostListener, Input } from '@angular/core';
 })
 export class CardTutoriaisComponent implements OnInit {
 
-  @Input() itens: any;
+  @Input() itens: Course[];
   cols: number = 0;
 
   defaultImage = '../assets/background-placeholder.jpg';

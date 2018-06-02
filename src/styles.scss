@@ -1,11 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-$main-color: rgb(65, 187, 234);
+$main-color: #41bbea;
 
 body {
     margin: 0;
 }
+
+// Scroll
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #cacaca;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #41bbea;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2b81a3;
+}
+
+// Scroll
 
 //Spinner
 .mat-progress-spinner circle, .mat-spinner circle {
@@ -56,3 +80,8 @@ body {
     animation-duration: 1s;
 }
 //Fade In 
+
+.scroll-vertical{
+    overflow-y: auto;
+    white-space: nowrap;
+}
