@@ -34,6 +34,9 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { NavHeaderComponent } from './nav-header/nav-header.component';
 import { CardTutoriaisComponent } from './card-tutoriais/card-tutoriais.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
+
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { PlaylistsComponent } from './playlists/playlists.component';
     CategoriasComponent,
     NavHeaderComponent,
     CardTutoriaisComponent,
-    PlaylistsComponent
+    PlaylistsComponent,
+    TutorialComponent,
+    SafeHtmlPipe
   ],
   imports: [
     FormsModule,

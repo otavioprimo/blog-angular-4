@@ -2,6 +2,8 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 $main-color: #41bbea;
+$font: "Carter One", cursive;
+$font-roboto: Roboto, "Helvetica Neue", sans-serif !important;
 
 body {
     margin: 0;
@@ -12,6 +14,10 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 4px;
+
+    :vertical {
+        width: 4px;
+    }
 }
 
 /* Track */
@@ -36,7 +42,7 @@ body {
     stroke: $main-color;
 }
 
-//Fade In 
+//Fade In
 @-webkit-keyframes fadeIn {
     from {
         opacity: 0;
@@ -79,9 +85,168 @@ body {
     -moz-animation-duration: 1s;
     animation-duration: 1s;
 }
-//Fade In 
 
-.scroll-vertical{
+//Fade In
+
+.scroll-vertical {
     overflow-y: auto;
     white-space: nowrap;
+}
+
+.code {
+    width: 500px;
+
+    // margin-left: 5px;
+    // margin-right: 5px;
+}
+
+// Estilo para o innerHtml do tutorial
+#main-div {
+    #card {
+        width: 700px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 35px;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        padding: 24px;
+        border-radius: 2px;
+
+        
+        p {
+            font-family: $font-roboto;
+        }
+
+        #chip-list {
+            padding: 0px;
+
+            li {
+                display: inline-block;
+                list-style: none;
+                color: #fff;
+                background-color: #41BBEA;
+                margin: 4px;
+                font-family: "Carter One", cursive;
+                transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+                display: inline-flex;
+                padding: 7px 12px;
+                border-radius: 24px;
+                align-items: center;
+                cursor: default;
+                position: relative;
+                overflow: hidden;
+                box-sizing: border-box;
+                font-size: 13px;
+                line-height: 18px;
+            }
+        }
+
+        #data-publicacao {
+            float: right;
+            font-family: $font-roboto;
+            font-weight: bold;
+            color: $main-color;
+        }
+
+        header {
+            margin-top: 15px;
+            background-color: #F6F6F6;
+
+            #logo {
+                margin-left: 15px;
+                width: 160px;
+            }
+
+            #row {
+                display: inline-block;
+                position: absolute;
+                margin-left: 25px;
+
+                h1 {
+                    top: 5px;
+                    vertical-align: top;
+                    font-family: $font-roboto;
+                    font-size: 26px;
+                    margin-bottom: 5px;
+                    width: 90%;
+                }
+            }
+        }
+
+        ul {
+            li {
+                margin-bottom: 15px;
+            }
+        }
+
+        .code {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+// Estilo para o innerHtml do tutorial
+
+@media only screen and (max-width: 600px) {
+    .code {
+        width: 100%;
+    }
+
+    //Pagina do tutorial
+
+    #main-div {
+        #card {
+            width: 85% !important;
+            margin-top: 0px;
+            margin-bottom: 0px;
+
+            #chip-list{
+                margin-top: 25px;
+            }
+
+            #data-publicacao {
+                margin-top: -10px;
+            }
+
+            p{
+                font-size: 14px;
+            }
+
+            header {
+                #logo {
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                    display: block;
+                    width: 70%;
+                }
+
+                .twitter-follow-button {
+                    margin-bottom: 15px;
+                }
+
+                #row {
+                    margin-left: 10px;
+                    text-align: center;
+                    position: relative;
+                    display: block;
+
+                    h1 {
+                        font-size: 20px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    //Pagina do tutorial
+}
+
+@media only screen and (max-width: 768px) {
+    #main-div {
+        #card {
+            width: 600px;
+        }
+    }
 }

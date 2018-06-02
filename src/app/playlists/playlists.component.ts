@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Playlist } from './../models/Playlist';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
@@ -21,7 +22,7 @@ export class PlaylistsComponent implements OnInit {
   selected_courses: Course[];
 
   defaultImage = '../assets/background-placeholder.jpg';
-  constructor(private coursesService: CoursesService) {
+  constructor(private coursesService: CoursesService, private router: Router) {
     this.setGridSize(window.innerWidth);
   }
 
@@ -29,12 +30,16 @@ export class PlaylistsComponent implements OnInit {
     this.coursesService.getPlaylists()
       .then((data: Playlist[]) => {
         this.itens = data;
-        // this.itens.forEach(el => el.courses.forEach(course => course.sm_cols = "2"))
       });
   }
 
   openCourses(playlist: Playlist): void {
     this.selected_courses = playlist.courses;
+  }
+
+  openPage(title: string) {
+    let titleStriped = title.replace(/\s/, '-');
+    this.router.navigate([`/tutorial/${titleStriped}`]);
   }
 
   @HostListener('window:resize', ['$event'])

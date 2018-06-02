@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { Course } from '../models/Course';
 
@@ -13,7 +14,7 @@ export class CardTutoriaisComponent implements OnInit {
 
   defaultImage = '../assets/background-placeholder.jpg';
 
-  constructor() {
+  constructor(public router: Router) {
     this.setGridSize(window.innerWidth);
   }
 
@@ -34,7 +35,8 @@ export class CardTutoriaisComponent implements OnInit {
     }
   }
 
-  openPage(title) {
-    console.log("Tutorial " + title);
+  openPage(title: string) {
+    let titleStriped = title.replace(/\s/, '-');
+    this.router.navigate([`/tutorial/${titleStriped}`]);
   }
 }
