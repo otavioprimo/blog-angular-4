@@ -1,0 +1,12 @@
+<mat-card>
+
+  <mat-form-field>
+    <input matInput placeholder="Usuario" autocomplete="on" autofocus required [(ngModel)]="usuario">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Senha" type="password" required [(ngModel)]="senha">
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" (click)="login()">LOGIN</button>
+
+</mat-card>
