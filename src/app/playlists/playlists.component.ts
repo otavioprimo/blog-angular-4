@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Playlist } from './../models/Playlist';
 import { Component, OnInit, HostListener } from '@angular/core';
@@ -22,8 +23,10 @@ export class PlaylistsComponent implements OnInit {
   selected_courses: Course[];
 
   defaultImage = '../assets/background-placeholder.jpg';
-  constructor(private coursesService: CoursesService, private router: Router) {
+  constructor(private coursesService: CoursesService, private router: Router,
+    private titleService: Title) {
     this.setGridSize(window.innerWidth);
+    this.titleService.setTitle("PLaylists");
   }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
 import { Categorie } from './../models/Categorie';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-categorias',
@@ -13,8 +14,10 @@ export class CategoriasComponent implements OnInit {
   cols = 5;
   height = '260px';
 
-  constructor(private coursesService: CoursesService) {
+  constructor(private coursesService: CoursesService,
+    private titleService: Title) {
     this.setGridSize(window.innerWidth);
+    this.titleService.setTitle("Categorias");
   }
 
   @HostListener('window:resize', ['$event'])

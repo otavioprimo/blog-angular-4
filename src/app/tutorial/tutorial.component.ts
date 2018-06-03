@@ -1,5 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-tutorial',
@@ -11,9 +12,10 @@ export class TutorialComponent implements OnInit {
     body: string = '';
     title: string = '';
     titleClear: string;
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute, private titleService: Title) {
         this.title = this.route.snapshot.paramMap.get('title');
-        this.titleClear = this.title.replace(/-/g,' ');
+        this.titleClear = this.title.replace(/-/g, ' ');
+        this.titleService.setTitle(this.titleClear);
     }
 
     ngOnInit() {
@@ -47,7 +49,7 @@ export class TutorialComponent implements OnInit {
       malesuada luctus velit sit amet porta.</p>
 
 
-      <pre class="prettyprint">
+      <pre class="prettyprint code">
 &lt;div id="div-cards" class="fade-in"&gt;
     &lt;mat-grid-list cols="{{cols}}" rowHeight="260px" gutterSize="8px"&gt;
         &lt;mat-grid-tile *ngFor="let i of itens" [colspan]="i.cols" [rowspan]="1"&gt;
@@ -97,7 +99,7 @@ export class TutorialComponent implements OnInit {
       <li>Item 3</li>
     </ul>
 
-    <pre class="prettyprint">
+    <pre class="prettyprint code">
 &lt;mat-card id="card"&gt;
     &lt;img [src]="i.image" id="logo"&gt;
     &lt;div id="div-separator"&gt;
@@ -119,7 +121,7 @@ export class TutorialComponent implements OnInit {
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus luctus ligula eget blandit. Suspendisse sit
       amet dignissim nisi.</p>
 
-      <pre class="prettyprint">
+      <pre class="prettyprint code">
 import { Playlist } from './../models/Playlist';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
@@ -176,10 +178,6 @@ export class PlaylistsComponent implements OnInit {
         }
     }
 }
-    </pre>
-
-    <pre class="prettyprint">
-        <p>{{user}}</p>
     </pre>
 
   </div>`;

@@ -1,12 +1,11 @@
 import { CoursesService } from './services/courses.service';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, FormControl } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { HighlightJsModule } from 'ngx-highlight-js';
 
 import {
   MatButtonModule,
@@ -74,11 +73,11 @@ import { SafeHtmlPipe } from './safe-html.pipe';
     MatAutocompleteModule,
     NgbModule.forRoot(),
     LazyLoadImageModule,
-    HighlightJsModule
   ],
   providers: [
     { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'never' } },
-    CoursesService
+    CoursesService,
+    Title
   ],
   bootstrap: [AppComponent],
   entryComponents: [DialogSearchComponent]

@@ -30,7 +30,6 @@
     "core-js": "^2.5.4",
     "express": "^4.16.3",
     "ng-lazyload-image": "^4.0.0",
-    "ngx-highlight-js": "^2.0.3",
     "path": "^0.12.7",
     "rxjs": "^6.0.0",
     "typescript": "~2.7.2",
