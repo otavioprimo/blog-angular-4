@@ -9,9 +9,14 @@ import { Title } from '@angular/platform-browser';
 })
 export class TutorialComponent implements OnInit {
 
-    body: string = '';
+    content: string = '';
     title: string = '';
     titleClear: string;
+    createdAt: Date = new Date();
+    tags: any[] = ["Ionic 3", "NodeJS"];
+
+    isLoading: boolean = true;
+
     constructor(private route: ActivatedRoute, private titleService: Title) {
         this.title = this.route.snapshot.paramMap.get('title');
         this.titleClear = this.title.replace(/-/g, ' ');
@@ -19,26 +24,11 @@ export class TutorialComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.body = `
-        <div id="card">
-
-    <p id="data-publicacao">
-      02/06/2018
-    </p>
-    
-    <ul id="chip-list">
-        <li>Ionic 3</li>
-        <li>Google Maps</li>
-    </ul>
-
-    <header id="header">
-      <img src="../../assets/icons/ionic-large-720.png" id="logo">
-      <div id="row">
-        <h1>${this.titleClear}</h1>
-        <!--<a href="https://twitter.com/otavioprimo?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false" id="btn-twitter">Follow @otavioprimo</a> -->
-      </div>
-    </header>
-
+        this.isLoading = true;
+        setTimeout(() => {
+            this.isLoading = false;
+        }, 2500);
+        this.content = `
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus luctus ligula eget blandit. Suspendisse sit
       amet dignissim nisi. Aliquam iaculis ullamcorper ligula vitae interdum. Nunc eu libero vitae dui aliquam imperdiet
       quis nec nisi. Etiam vehicula bibendum sem, at imperdiet turpis pulvinar et. Nunc rhoncus risus metus, eget mattis

@@ -1,2 +1,26 @@
-<div id="main-div" [innerHtml]="body | safeHtml" class="fade-in">
-</div>
+<mat-spinner id="spinner" diameter="80" *ngIf="isLoading; else body"></mat-spinner>
+
+<ng-template #body>
+    <div id="main-div" class="fade-in">
+        <div id="card">
+
+            <p id="data-publicacao">
+                {{createdAt | date:'dd/MM/yyyy'}}
+            </p>
+
+            <ul id="chip-list">
+                <li *ngFor="let tag of tags">{{tag}}</li>
+            </ul>
+
+            <header id="header">
+                <!-- <img src="../../assets/icons/ionic-large-720.png" id="logo"> -->
+                <img src="https://montanab.com/wp-content/uploads/android-apps.png" id="logo">
+                <div id="row">
+                    <h1>{{this.titleClear}}</h1>
+                </div>
+            </header>
+
+            <div [innerHtml]="content | safeHtml"></div>
+        </div>
+    </div>
+</ng-template>

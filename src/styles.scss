@@ -153,7 +153,9 @@ body {
 
             #logo {
                 margin-left: 15px;
-                width: 160px;
+                margin-top: 16px;
+                margin-bottom: 15px;
+                max-width: 250px;
             }
 
             #row {
@@ -230,6 +232,7 @@ body {
                     h1 {
                         font-size: 20px;
                         width: 100%;
+                        margin-bottom: 16px;    
                     }
                 }
             }

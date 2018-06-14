@@ -8,23 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { JwtModule } from '@auth0/angular-jwt';
 
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatGridListModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatSidenavModule,
-  MatDividerModule,
-  MatInputModule,
-  MAT_LABEL_GLOBAL_OPTIONS,
-  MatBadgeModule,
-  MatDialogModule,
-  MatProgressSpinnerModule,
-  MatMenuModule,
-  MatChipsModule,
-  MatAutocompleteModule
-} from '@angular/material';
+import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material';
 
 import { DashboardModule } from './dashboard/dashboard.module';
 import { CoursesService } from './services/courses.service';
@@ -42,6 +26,7 @@ import { TutorialComponent } from './tutorial/tutorial.component';
 
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { AppMaterialModule } from './app-material/app-material.module';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -65,25 +50,11 @@ export function tokenGetter() {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatGridListModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatDividerModule,
-    MatInputModule,
-    FormsModule,
-    MatBadgeModule,
-    MatDialogModule,
-    MatProgressSpinnerModule,
-    MatMenuModule,
-    MatChipsModule,
-    MatAutocompleteModule,
-    NgbModule.forRoot(),
-    LazyLoadImageModule,
     DashboardModule,
+    LazyLoadImageModule,
     HttpClientModule,
+    AppMaterialModule,
+    NgbModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
